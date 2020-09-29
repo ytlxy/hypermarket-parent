@@ -1,0 +1,20 @@
+package com.hypermarket.mapper;
+
+import com.hypermarket.pojo.TbAddress;
+import com.hypermarket.pojo.TbAddressExample;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
+
+public interface TbAddressMapper {
+    public int countByExample(TbAddressExample example);
+    public int deleteByExample(TbAddressExample example);
+    public int deleteByPrimaryKey(Long id);
+    public int insert(TbAddress record);
+    public int insertSelective(TbAddress record);
+    public List<TbAddress> selectByExample(TbAddressExample example);
+    public TbAddress selectByPrimaryKey(Long id);
+    public int updateByExample(@Param("record")TbAddress record,@Param("example") TbAddressExample example);
+    public int updateByPrimaryKeySeletive(TbAddress record);
+    public int updateByPrimaryKey(TbAddress record);
+}

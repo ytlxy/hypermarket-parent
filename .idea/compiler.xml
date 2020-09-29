@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="hypermarket-sellergoods-interface" />
+        <module name="hypermarket-dao" />
+        <module name="hypermarket-sellergoods-service" />
+        <module name="hypermarket-pojo" />
+        <module name="hypermarket-shop-web" />
+        <module name="hypermarket-manager-web" />
+        <module name="hypermarket-commons" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
