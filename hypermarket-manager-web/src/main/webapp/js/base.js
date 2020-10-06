@@ -1,0 +1,1 @@
+var app=angular.module('hypermarket',[]);       //  定义整个商城模块
