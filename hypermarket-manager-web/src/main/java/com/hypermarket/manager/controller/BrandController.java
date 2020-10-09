@@ -1,6 +1,7 @@
 package com.hypermarket.manager.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.hypermarket.entity.PageResult;
 import com.hypermarket.pojo.TbBrand;
 import com.hypermarket.sellergoods.service.BrandService;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,5 +18,10 @@ public class BrandController {
     @RequestMapping("/findAll")
     public List<TbBrand> findAll(){
         return brandService.findAll();
+    }
+
+    @RequestMapping("/findPage")
+    public PageResult findPage(int page,int size){
+        return brandService.findPage(page, size);
     }
 }
