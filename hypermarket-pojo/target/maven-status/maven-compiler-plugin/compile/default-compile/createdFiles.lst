@@ -42,6 +42,7 @@ com\hypermarket\pojo\TbFreightTemplateExample$GeneratedCriteria.class
 com\hypermarket\pojo\TbTypeTemolateExample$GeneratedCriteria.class
 com\hypermarket\pojo\TbOrderItemExample.class
 com\hypermarket\pojo\TbSpecificationOption.class
+com\hypermarket\entity\PageResult.class
 com\hypermarket\pojo\TbAddressExample$Criteria.class
 com\hypermarket\pojo\TbSpecificationOptionExample$Criteria.class
 com\hypermarket\pojo\TbGoodsDescExample$Criterion.class
