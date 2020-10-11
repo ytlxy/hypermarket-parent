@@ -79,6 +79,7 @@ com\hypermarket\pojo\TbBrand.class
 com\hypermarket\pojo\TbSellerExample$Criterion.class
 com\hypermarket\pojo\TbBrandExample.class
 com\hypermarket\pojo\TbContentCategoryExample$GeneratedCriteria.class
+com\hypermarket\entity\Result.class
 com\hypermarket\pojo\TbPayLogExample$Criterion.class
 com\hypermarket\pojo\TbOrderItemExample$GeneratedCriteria.class
 com\hypermarket\pojo\TbItemCatExample$Criteria.class
