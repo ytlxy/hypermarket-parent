@@ -12,4 +12,5 @@ public interface BrandService {
     public TbBrand findOne(Long id);
     public void update(TbBrand brand);
     public void delete(List<Long> ids);
+    public PageResult getAllFindPage(TbBrand brand,int pageNum,int pageSize);
 }

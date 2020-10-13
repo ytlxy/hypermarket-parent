@@ -5,6 +5,7 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.hypermarket.entity.PageResult;
 import com.hypermarket.pojo.TbBrand;
+import com.hypermarket.pojo.TbBrandExample;
 import com.hypermarket.sellergoods.service.BrandService;
 import com.hypermarket.mapper.TbBrandMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +50,23 @@ public class BrandServiceImpl implements BrandService {
         for(Long id:ids){
             brandMapper.deleteByPrimaryKey(id);
         }
+    }
+
+    @Override
+    public PageResult getAllFindPage(TbBrand brand, int pageNum, int pageSize) {
+        PageHelper.startPage(pageNum,pageSize);
+        TbBrandExample example=new TbBrandExample();
+        TbBrandExample.Criteria criteria=example.createCriteria();
+        if (brand!=null){
+            if (brand.getName()!=null && brand.getName().length()>0){
+                criteria.andNameLike("%"+brand.getName()+"%");
+            }
+            if(brand.getFirstChar()!=null && brand.getFirstChar().length()>0){
+                criteria.andFirstCharLike("%"+brand.getFirstChar()+"%");
+            }
+        }
+        Page<TbBrand> page=(Page<TbBrand>)brandMapper.selectByExample(example);
+        return new PageResult(page.getTotal(),page.getResult());
     }
 
 }
