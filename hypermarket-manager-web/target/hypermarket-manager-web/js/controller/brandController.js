@@ -1,8 +1,4 @@
-//控制层
-app.controller('brandController',function($scope,$controller,brandService) {
-
-    $controller('baseController',{$scope:$scope});//继承
-    //查询品牌列表
+app.controller('brandController', function ($scope, $http,brandService) {
     $scope.findAll = function () {
         brandService.findAll().success(
             function (response) {
@@ -10,75 +6,80 @@ app.controller('brandController',function($scope,$controller,brandService) {
             }
         );
     }
-
-    // //刷新列表新方法
-    // $scope.load=function(){
-    // 	$scope.search( $scope.paginationConf.currentPage ,  $scope.paginationConf.itemsPerPage );
-    // }
-
-    //分页
-    $scope.findPage=function(page,size){ //这里的findPage()方法名不一定非要和后端的方法名一致
+    $scope.paginationConf = {
+        currentPage: 1,
+        totalItems: 10,
+        itemsPerPage: 10,
+        perPageOptions: [10, 20, 30, 40, 50],
+        onChange: function () {
+            $scope.reloadList();
+        }
+    };
+    $scope.reloadList = function () {
+        $scope.search($scope.paginationConf.currentPage,$scope.paginationConf.itemsPerPage);
+    }
+    $scope.findPage = function (page, size) {
         brandService.findPage(page,size).success(
-            function(response){
-                $scope.list=response.rows;//显示当前页数据
-                $scope.paginationConf.totalItems=response.total;//更新总记录数
+            function (response) {
+                $scope.list = response.rows;
+                $scope.paginationConf.totalItems = response.total;
             }
         );
     }
-    //新增
-    $scope.save=function(){
-        var object=null; //定义对象
+    $scope.save = function () {
+        var object=null;
         if($scope.entity.id!=null){
             object=brandService.update($scope.entity);
         }else{
             object=brandService.add($scope.entity);
         }
         object.success(
-            function(response){
-                if(response.success){
-                    $scope.reloadList();//刷新
+            function (response){
+                if (response.success){
+                    $scope.reloadList();
                 }else{
                     alert(response.message);
                 }
             }
         );
     }
-    //查询实体
-    $scope.findOne=function(id){
+    $scope.findOne = function (id) {
         brandService.findOne(id).success(
-            function(response){
-                $scope.entity=response;
+            function (response) {
+                $scope.entity = response;
             }
         );
     }
-
-
-    //批量删除
-    $scope.dele=function(){
-        if(confirm('确定要删除吗？')){
-            // $http.post('../brand/delete.do?ids=',$scope.selectids).success(
-            brandService.dele($scope.selectids).success(
-                function(response){
-                    if(response.success){
-                        $scope.reloadList();//刷新
-                    }else{
+    $scope.selectIds = [];
+    $scope.updateSelection = function ($event, id) {
+        if ($event.target.checked) {
+            $scope.selectIds.push(id);
+        } else {
+            var idx = $scope.selectIds.indexOf(id);
+            $scope.selectIds.splice(idx, 1);
+        }
+    }
+    $scope.dele = function () {
+        if (confirm('确定要删除吗?')) {
+            brandService.dele($scope.selectIds).success(
+                function (response) {
+                    if (response.success) {
+                        $scope.reloadList();
+                    } else {
                         alert(response.message);
                     }
                 }
             );
         }
     }
-    //条件查询对象定义
     $scope.searchEntity={};
-    //条件查询
-    $scope.search=function(page,size){
 
+    $scope.search=function (page,size){
         brandService.search(page,size,$scope.searchEntity).success(
-            function(response){
-                $scope.list=response.rows;//显示当前页数据
-                $scope.paginationConf.totalItems=response.total;//更新总记录数
+            function (response){
+                $scope.list=response.rows;
+                $scope.paginationConf.totalItems=response.total;
             }
         );
-
     }
 });

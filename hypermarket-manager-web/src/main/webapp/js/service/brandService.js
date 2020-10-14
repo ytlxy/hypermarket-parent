@@ -1,4 +1,3 @@
-//品牌服务
 app.service('brandService',function ($http) {
     this.findAll=function () {
         return $http.get('../brand/findAll.do');
@@ -12,7 +11,7 @@ app.service('brandService',function ($http) {
     this.add=function (entity) {
         return $http.post('../brand/add.do',entity);
     }
-    this.update=function () {
+    this.update=function (entity) {
         return $http.post('../brand/update.do',entity);
     }
     this.dele=function (ids) {
@@ -21,7 +20,6 @@ app.service('brandService',function ($http) {
     this.search=function (page,size,searchEntity) {
         return $http.post('../brand/search.do?page='+page +'&size='+size, searchEntity);
     }
-    //下拉列表数据
     this.selectOptionList=function(){
         return $http.get('../brand/selectOptionList.do');
     }
