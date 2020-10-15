@@ -6,6 +6,7 @@ import com.hypermarket.pojo.TbSpecificationExample;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 public interface TbSpecificationMapper {
     public int countByExample(TbSpecificationExample example);
@@ -19,5 +20,5 @@ public interface TbSpecificationMapper {
     public int updateByExample(@Param("record") TbSpecification record,@Param("example") TbSpecificationExample example);
     public int updateByPrimaryKeySelective(TbSpecification record);
     public int updateByPrimaryKey(TbSpecification record);
-
+    List<Map> selectOptionList();
 }
