@@ -2,7 +2,7 @@ package com.hypermarket.pojo;
 
 import java.io.Serializable;
 
-public class TbTypeTemolate implements Serializable {
+public class TbTypeTemplate implements Serializable {
     private Long id;
     private String name;
     private String specIds;

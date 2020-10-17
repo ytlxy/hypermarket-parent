@@ -14,6 +14,6 @@ public interface SpecificationService {
     public void update(Specification specification);
     public Specification findOne(Long id);
     public void delete(List<Long> ids);
-    public PageResult findPage(TbSpecification specification);
+    public PageResult findPage(TbSpecification specification,int pageNum,int pageSize);
     public List<Map> selectOptionList();
 }
