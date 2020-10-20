@@ -28,8 +28,8 @@ public class TbTypeTemplateServiceImpl implements TbTypeTemplateService {
     @Override
     public PageResult findPage(int pageNum, int pageSize) {
         PageHelper.startPage(pageNum, pageSize);
-       Page<TbTypeTemplate> page =(Page<TbTypeTemplate>) typeTemplateMapper.selectByExample(null);
-        return new PageResult(page.getTotal(),page.getResult());
+        Page<TbTypeTemplate> page = (Page<TbTypeTemplate>) typeTemplateMapper.selectByExample(null);
+        return new PageResult(page.getTotal(), page.getResult());
     }
 
     //增加
@@ -53,7 +53,7 @@ public class TbTypeTemplateServiceImpl implements TbTypeTemplateService {
     //批量删除
     @Override
     public void delete(List<Long> ids) {
-        for (Long id:ids){
+        for (Long id : ids) {
             typeTemplateMapper.deleteByPrimaryKey(id);
         }
     }
@@ -62,21 +62,21 @@ public class TbTypeTemplateServiceImpl implements TbTypeTemplateService {
     @Override
     public PageResult findPage(TbTypeTemplate typeTemplate, int pageNum, int pageSize) {
         PageHelper.startPage(pageNum, pageSize);
-        TbTypeTemplateExample example=new TbTypeTemplateExample();
-        TbTypeTemplateExample.Criteria criteria=example.createCriteria();
+        TbTypeTemplateExample example = new TbTypeTemplateExample();
+        TbTypeTemplateExample.Criteria criteria = example.createCriteria();
 
-        if (typeTemplate!=null){
-            if (typeTemplate.getName()!=null && typeTemplate.getName().length()>0){
-                criteria.andNameLike("%"+typeTemplate.getName()+"%");
+        if (typeTemplate != null) {
+            if (typeTemplate.getName() != null && typeTemplate.getName().length() > 0) {
+                criteria.andNameLike("%" + typeTemplate.getName() + "%");
             }
-            if (typeTemplate.getSpecIds()!=null && typeTemplate.getSpecIds().length()>0){
-                criteria.andSpecIdsLike("%"+typeTemplate.getSpecIds()+"%");
+            if (typeTemplate.getSpecIds() != null && typeTemplate.getSpecIds().length() > 0) {
+                criteria.andSpecIdsLike("%" + typeTemplate.getSpecIds() + "%");
             }
-            if (typeTemplate.getCustomAttributeItems()!= null && typeTemplate.getCustomAttributeItems().length()>0){
-                criteria.andCustomAttributeItemsLike("%"+typeTemplate.getCustomAttributeItems().length()+"%");
+            if (typeTemplate.getCustomAttributeItems() != null && typeTemplate.getCustomAttributeItems().length() > 0) {
+                criteria.andCustomAttributeItemsLike("%" + typeTemplate.getCustomAttributeItems().length() + "%");
             }
         }
-        Page<TbTypeTemplate> page=(Page<TbTypeTemplate>) typeTemplateMapper.selectByExample(example);
-        return new PageResult(page.getTotal(),page.getResult());
+        Page<TbTypeTemplate> page = (Page<TbTypeTemplate>) typeTemplateMapper.selectByExample(example);
+        return new PageResult(page.getTotal(), page.getResult());
     }
 }

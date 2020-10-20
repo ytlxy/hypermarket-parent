@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class SpecificationServiceimpl implements SpecificationService {
+public class SpecificationServiceImpl implements SpecificationService {
 
     @Autowired
     private TbSpecificationMapper specificationMapper;
@@ -98,8 +98,8 @@ public class SpecificationServiceimpl implements SpecificationService {
                 criteria.andSpecNameLike("%" + specification.getSpecName() + "%");
             }
         }
-        Page<TbSpecification> page=(Page<TbSpecification>) specificationMapper.selectByExample(example);
-        return new PageResult(page.getTotal(),page.getResult());
+        Page<TbSpecification> page = (Page<TbSpecification>) specificationMapper.selectByExample(example);
+        return new PageResult(page.getTotal(), page.getResult());
     }
 
     @Override
