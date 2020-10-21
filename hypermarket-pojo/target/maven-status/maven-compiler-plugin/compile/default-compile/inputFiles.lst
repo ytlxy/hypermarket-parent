@@ -1,4 +1,5 @@
 D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\entity\Result.java
+D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbTypeTemplate.java
 D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbFreightTemplate.java
 D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbUserExample.java
 D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbSeller.java
@@ -12,7 +13,6 @@ D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbOrde
 D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbCitiesExample.java
 D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbGoodsDesc.java
 D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbSeckillGoods.java
-D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbTypeTemolate.java
 D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbSpecificationExample.java
 D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbContentCategory.java
 D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbGoodsExample.java
@@ -20,6 +20,7 @@ D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbArea
 D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbAreasExample.java
 D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbSpecificationOption.java
 D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbUser.java
+D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbTypeTemplateExample.java
 D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbAddressExample.java
 D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbOrder.java
 D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbBrand.java
@@ -31,8 +32,8 @@ D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbProv
 D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbSeckillOrder.java
 D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbContentExample.java
 D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbContentCategoryExample.java
-D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbTypeTemolateExample.java
 D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbGoods.java
+D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojogroup\Specification.java
 D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbItem.java
 D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbSpecificationOptionExample.java
 D:\hypermarket-parent\hypermarket-pojo\src\main\java\com\hypermarket\pojo\TbSeckillOrderExample.java

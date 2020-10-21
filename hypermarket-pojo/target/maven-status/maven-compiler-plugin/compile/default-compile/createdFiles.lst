@@ -5,17 +5,18 @@ com\hypermarket\pojo\TbFreightTemplateExample$Criteria.class
 com\hypermarket\pojo\TbGoodsExample$Criterion.class
 com\hypermarket\pojo\TbSpecificationExample$GeneratedCriteria.class
 com\hypermarket\pojo\TbSpecificationExample.class
+com\hypermarket\pojo\TbTypeTemplate.class
 com\hypermarket\pojo\TbProvincesExample$Criterion.class
 com\hypermarket\pojo\TbBrandExample$Criteria.class
 com\hypermarket\pojo\TbCitiesExample$Criteria.class
 com\hypermarket\pojo\TbFreightTemplate.class
 com\hypermarket\pojo\TbSellerExample$GeneratedCriteria.class
-com\hypermarket\pojo\TbTypeTemolateExample.class
 com\hypermarket\pojo\TbBrandExample$Criterion.class
 com\hypermarket\pojo\TbAreas.class
 com\hypermarket\pojo\TbItemExample$GeneratedCriteria.class
 com\hypermarket\pojo\TbPayLogExample$GeneratedCriteria.class
 com\hypermarket\pojo\TbContentExample$GeneratedCriteria.class
+com\hypermarket\pojo\TbTypeTemplateExample$Criterion.class
 com\hypermarket\pojo\TbGoodsExample$Criteria.class
 com\hypermarket\pojo\TbGoodsExample$GeneratedCriteria.class
 com\hypermarket\pojo\TbContentCategory.class
@@ -28,7 +29,6 @@ com\hypermarket\pojo\TbAddressExample$Criterion.class
 com\hypermarket\pojo\TbPayLog.class
 com\hypermarket\pojo\TbSeckillGoodsExample.class
 com\hypermarket\pojo\TbItemCatExample$GeneratedCriteria.class
-com\hypermarket\pojo\TbTypeTemolateExample$Criterion.class
 com\hypermarket\pojo\TbSeckillOrderExample$Criteria.class
 com\hypermarket\pojo\TbPayLogExample$Criteria.class
 com\hypermarket\pojo\TbItemExample$Criteria.class
@@ -39,14 +39,12 @@ com\hypermarket\pojo\TbSpecificationExample$Criteria.class
 com\hypermarket\pojo\TbBrandExample$GeneratedCriteria.class
 com\hypermarket\pojo\TbContentCategoryExample$Criterion.class
 com\hypermarket\pojo\TbFreightTemplateExample$GeneratedCriteria.class
-com\hypermarket\pojo\TbTypeTemolateExample$GeneratedCriteria.class
 com\hypermarket\pojo\TbOrderItemExample.class
 com\hypermarket\pojo\TbSpecificationOption.class
 com\hypermarket\entity\PageResult.class
 com\hypermarket\pojo\TbAddressExample$Criteria.class
 com\hypermarket\pojo\TbSpecificationOptionExample$Criteria.class
 com\hypermarket\pojo\TbGoodsDescExample$Criterion.class
-com\hypermarket\pojo\TbTypeTemolate.class
 com\hypermarket\pojo\TbSeckillGoodsExample$Criterion.class
 com\hypermarket\pojo\TbCitiesExample$Criterion.class
 com\hypermarket\pojo\TbAddressExample$GeneratedCriteria.class
@@ -57,6 +55,7 @@ com\hypermarket\pojo\TbItem.class
 com\hypermarket\pojo\TbOrderExample$Criteria.class
 com\hypermarket\pojo\TbItemCatExample.class
 com\hypermarket\pojo\TbAreasExample$Criterion.class
+com\hypermarket\pojo\TbTypeTemplateExample.class
 com\hypermarket\pojo\TbAddress.class
 com\hypermarket\pojo\TbGoodsDesc.class
 com\hypermarket\pojo\TbContentCategoryExample.class
@@ -71,6 +70,7 @@ com\hypermarket\pojo\TbItemExample.class
 com\hypermarket\pojo\TbContent.class
 com\hypermarket\pojo\TbContentExample$Criterion.class
 com\hypermarket\pojo\TbOrderExample.class
+com\hypermarket\pojo\TbTypeTemplateExample$Criteria.class
 com\hypermarket\pojo\TbCitiesExample.class
 com\hypermarket\pojo\TbSpecificationOptionExample$Criterion.class
 com\hypermarket\pojo\TbProvincesExample.class
@@ -94,7 +94,6 @@ com\hypermarket\pojo\TbContentExample$Criteria.class
 com\hypermarket\pojo\TbProvincesExample$GeneratedCriteria.class
 com\hypermarket\pojo\TbGoodsDescExample$Criteria.class
 com\hypermarket\pojo\TbSeckillOrderExample$Criterion.class
-com\hypermarket\pojo\TbTypeTemolateExample$Criteria.class
 com\hypermarket\pojo\TbAreasExample$GeneratedCriteria.class
 com\hypermarket\pojo\TbAddressExample.class
 com\hypermarket\pojo\TbItemCatExample$Criterion.class
@@ -107,6 +106,8 @@ com\hypermarket\pojo\TbGoodsExample.class
 com\hypermarket\pojo\TbOrder.class
 com\hypermarket\pojo\TbOrderExample$Criterion.class
 com\hypermarket\pojo\TbSeckillGoods.class
+com\hypermarket\pojo\TbTypeTemplateExample$GeneratedCriteria.class
+com\hypermarket\pojogroup\Specification.class
 com\hypermarket\pojo\TbGoodsDescExample$GeneratedCriteria.class
 com\hypermarket\pojo\TbSeckillOrder.class
 com\hypermarket\pojo\TbSpecificationOptionExample.class

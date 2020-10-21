@@ -1,1 +1,6 @@
+com\hypermarket\sellergoods\service\ItemCatService.class
+com\hypermarket\sellergoods\service\TbTypeTemplateService.class
+com\hypermarket\sellergoods\service\GoodsService.class
+com\hypermarket\sellergoods\service\TbSellerService.class
 com\hypermarket\sellergoods\service\BrandService.class
+com\hypermarket\sellergoods\service\SpecificationService.class
