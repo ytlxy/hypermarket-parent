@@ -16,5 +16,4 @@ com\hypermarket\mapper\TbAreasMapper.class
 com\hypermarket\mapper\TbProvincesMapper.class
 com\hypermarket\mapper\TbSpecificationMapper.class
 com\hypermarket\mapper\TbSpecificationOptionMapper.class
-com\hypermarket\mapper\TbSellerMapper.class
 com\hypermarket\mapper\TbFreightTemplateMapper.class

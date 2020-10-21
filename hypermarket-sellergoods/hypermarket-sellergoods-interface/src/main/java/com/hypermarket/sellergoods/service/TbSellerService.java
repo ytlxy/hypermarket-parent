@@ -15,12 +15,10 @@ public interface TbSellerService {
 
     public void update(TbSeller tbSeller);
 
-    public TbSeller findOne(Long id);
+    public TbSeller findOne(String id);
 
-    public void delete(List<Long> ids);
+    public void delete(List<String> ids);
 
     public PageResult findPage(TbSeller tbSeller, int pageNum, int pageSize);
-
-    public List<Map> selectOptionList();
 
 }

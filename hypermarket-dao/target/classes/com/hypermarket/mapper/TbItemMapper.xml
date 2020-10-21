@@ -398,74 +398,74 @@
     <update id="updateByPrimaryKeySelective" parameterType="com.hypermarket.pojo.TbItem" >
         update tb_item
         <set >
-            <if test="record.id != null" >
-                id = #{record.id,jdbcType=BIGINT},
+            <if test="id != null" >
+                id = #{id,jdbcType=BIGINT},
             </if>
-            <if test="record.title != null" >
-                title = #{record.title,jdbcType=VARCHAR},
+            <if test="title != null" >
+                title = #{title,jdbcType=VARCHAR},
             </if>
-            <if test="record.sellPoint != null" >
-                sell_point = #{record.sellPoint,jdbcType=VARCHAR},
+            <if test="sellPoint != null" >
+                sell_point = #{sellPoint,jdbcType=VARCHAR},
             </if>
-            <if test="record.price != null" >
-                price = #{record.price,jdbcType=DECIMAL},
+            <if test="price != null" >
+                price = #{price,jdbcType=DECIMAL},
             </if>
-            <if test="record.stockCount != null" >
-                stock_count = #{record.stockCount,jdbcType=INTEGER},
+            <if test="stockCount != null" >
+                stock_count = #{stockCount,jdbcType=INTEGER},
             </if>
-            <if test="record.num != null" >
-                num = #{record.num,jdbcType=INTEGER},
+            <if test="num != null" >
+                num = #{num,jdbcType=INTEGER},
             </if>
-            <if test="record.barcode != null" >
-                barcode = #{record.barcode,jdbcType=VARCHAR},
+            <if test="barcode != null" >
+                barcode = #{barcode,jdbcType=VARCHAR},
             </if>
-            <if test="record.image != null" >
-                image = #{record.image,jdbcType=VARCHAR},
+            <if test="image != null" >
+                image = #{image,jdbcType=VARCHAR},
             </if>
-            <if test="record.categoryid != null" >
-                categoryId = #{record.categoryid,jdbcType=BIGINT},
+            <if test="categoryid != null" >
+                categoryId = #{categoryid,jdbcType=BIGINT},
             </if>
-            <if test="record.status != null" >
-                status = #{record.status,jdbcType=VARCHAR},
+            <if test="status != null" >
+                status = #{status,jdbcType=VARCHAR},
             </if>
-            <if test="record.createTime != null" >
-                create_time = #{record.createTime,jdbcType=TIMESTAMP},
+            <if test="createTime != null" >
+                create_time = #{createTime,jdbcType=TIMESTAMP},
             </if>
-            <if test="record.updateTime != null" >
-                update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+            <if test="updateTime != null" >
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
             </if>
-            <if test="record.itemSn != null" >
-                item_sn = #{record.itemSn,jdbcType=VARCHAR},
+            <if test="itemSn != null" >
+                item_sn = #{itemSn,jdbcType=VARCHAR},
             </if>
-            <if test="record.costPirce != null" >
-                cost_price = #{record.costPirce,jdbcType=DECIMAL},
+            <if test="costPirce != null" >
+                cost_price = #{costPirce,jdbcType=DECIMAL},
             </if>
-            <if test="record.marketPrice != null" >
-                market_price = #{record.marketPrice,jdbcType=DECIMAL},
+            <if test="marketPrice != null" >
+                market_price = #{marketPrice,jdbcType=DECIMAL},
             </if>
-            <if test="record.isDefault != null" >
-                is_default = #{record.isDefault,jdbcType=VARCHAR},
+            <if test="isDefault != null" >
+                is_default = #{isDefault,jdbcType=VARCHAR},
             </if>
-            <if test="record.goodsId != null" >
-                goods_id = #{record.goodsId,jdbcType=BIGINT},
+            <if test="goodsId != null" >
+                goods_id = #{goodsId,jdbcType=BIGINT},
             </if>
-            <if test="record.sellerId != null" >
-                seller_id = #{record.sellerId,jdbcType=VARCHAR},
+            <if test="sellerId != null" >
+                seller_id = #{sellerId,jdbcType=VARCHAR},
             </if>
-            <if test="record.cartThumbnail != null" >
-                cart_thumnail = #{record.cartThumbnail,jdbcType=VARCHAR},
+            <if test="cartThumbnail != null" >
+                cart_thumnail = #{cartThumbnail,jdbcType=VARCHAR},
             </if>
-            <if test="record.category != null" >
-                category = #{record.category,jdbcType=VARCHAR},
+            <if test="category != null" >
+                category = #{category,jdbcType=VARCHAR},
             </if>
-            <if test="record.brand != null" >
-                brand = #{record.brand,jdbcType=VARCHAR},
+            <if test="brand != null" >
+                brand = #{brand,jdbcType=VARCHAR},
             </if>
-            <if test="record.spec != null" >
-                spec = #{record.spec,jdbcType=VARCHAR},
+            <if test="spec != null" >
+                spec = #{spec,jdbcType=VARCHAR},
             </if>
-            <if test="record.seller != null" >
-                seller = #{record.seller,jdbcType=VARCHAR},
+            <if test="seller != null" >
+                seller = #{seller,jdbcType=VARCHAR},
             </if>
         </set>
         where id = #{id,jdbcType=BIGINT}
@@ -473,29 +473,30 @@
 
     <update id="updateByPrimaryKey" parameterType="com.hypermarket.pojo.TbItem" >
         update tb_item
-        set id = #{record.id,jdbcType=BIGINT},
-        title = #{record.title,jdbcType=VARCHAR},
-        sell_point = #{record.sellPoint,jdbcType=VARCHAR}
-        price = #{record.price,jdbcType=DECIMAL},
-        stock_count = #{record.stockCount,jdbcType=INTEGER},
-        num = #{record.num,jdbcType=INTEGER},
-        barcode = #{record.barcode,jdbcType=VARCHAR},
-        image = #{record.image,jdbcType=VARCHAR},
-        categoryId = #{record.categoryid,jdbcType=BIGINT},
-        status = #{record.status,jdbcType=VARCHAR},
-        create_time = #{record.createTime,jdbcType=TIMESTAMP},
-        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
-        item_sn = #{record.itemSn,jdbcType=VARCHAR},
-        cost_price = #{record.costPirce,jdbcType=DECIMAL},
-        market_price = #{record.marketPrice,jdbcType=DECIMAL},
-        is_default = #{record.isDefault,jdbcType=VARCHAR},
-        goods_id = #{record.goodsId,jdbcType=BIGINT},
-        seller_id = #{record.sellerId,jdbcType=VARCHAR},
-        cart_thumnail = #{record.cartThumbnail,jdbcType=VARCHAR},
-        category = #{record.category,jdbcType=VARCHAR},
-        brand = #{record.name,jdbcType=VARCHAR},
-        spec = #{record.spec,jdbcType=VARCHAR},
-        seller = #{record.seller,jdbcType=VARCHAR}
+        set id = #{id,jdbcType=BIGINT},
+        title = #{title,jdbcType=VARCHAR},
+        sell_point = #{sellPoint,jdbcType=VARCHAR}
+        price = #{price,jdbcType=DECIMAL},
+        stock_count = #{stockCount,jdbcType=INTEGER},
+        num = #{num,jdbcType=INTEGER},
+        barcode = #{barcode,jdbcType=VARCHAR},
+        image = #{image,jdbcType=VARCHAR},
+        categoryId = #{categoryid,jdbcType=BIGINT},
+        status = #{status,jdbcType=VARCHAR},
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+        item_sn = #{itemSn,jdbcType=VARCHAR},
+        cost_price = #{costPirce,jdbcType=DECIMAL},
+        market_price = #{marketPrice,jdbcType=DECIMAL},
+        is_default = #{isDefault,jdbcType=VARCHAR},
+        goods_id = #{goodsId,jdbcType=BIGINT},
+        seller_id = #{sellerId,jdbcType=VARCHAR},
+        cart_thumnail = #{cartThumbnail,jdbcType=VARCHAR},
+        category = #{category,jdbcType=VARCHAR},
+        brand = #{name,jdbcType=VARCHAR},
+        spec = #{spec,jdbcType=VARCHAR},
+        seller = #{seller,jdbcType=VARCHAR},
+        where id = #{id,jdbcType=BIGINT}
   </update>
 
 </mapper>

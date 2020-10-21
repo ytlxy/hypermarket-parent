@@ -198,9 +198,9 @@
     </update>
     <update id="updateByPrimaryKey" parameterType="com.hypermarket.pojo.TbAreas" >
     update tb_areas
-    set areaid = #{record.areaid,jdbcType=VARCHAR},
-        area = #{record.area,jdbcType=VARCHAR},
-        cityid = #{record.cityid,jdbcType=VARCHAR}
+    set areaid = #{areaid,jdbcType=VARCHAR},
+        area = #{area,jdbcType=VARCHAR},
+        cityid = #{cityid,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
 
