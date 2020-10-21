@@ -236,12 +236,12 @@
     </update>
     <update id="updateByPrimaryKey" parameterType="com.hypermarket.pojo.TbGoodsDesc" >
     update tb_goods_desc
-    set introduction = #{record.introduction,jdbcType=VARCHAR},
-        specification_items = #{record.specificationItems,jdbcType=VARCHAR},
-        custom_attribute_items = #{record.customAttributeItems,jdbcType=VARCHAR},
-        item_images = #{record.itemImages,jdbcType=VARCHAR},
-        package_list = #{record.packageList,jdbcType=VARCHAR},
-        sale_service = #{record.saleService,jdbcType=VARCHAR},
+    set introduction = #{introduction,jdbcType=VARCHAR},
+        specification_items = #{specificationItems,jdbcType=VARCHAR},
+        custom_attribute_items = #{customAttributeItems,jdbcType=VARCHAR},
+        item_images = #{itemImages,jdbcType=VARCHAR},
+        package_list = #{packageList,jdbcType=VARCHAR},
+        sale_service = #{saleService,jdbcType=VARCHAR},
     where goodsId = #{goodsId,jdbcType=BIGINT}
   </update>
 
