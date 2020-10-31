@@ -26,8 +26,8 @@ public class SpecificationController {
     }
 
     @RequestMapping("/findPage")
-    public PageResult findPage(int page,int rows){
-        return specificationService.findPage(page,rows);
+    public PageResult findPage(int page,int size){
+        return specificationService.findPage(page,size);
     }
 
     @RequestMapping("/add")
@@ -58,7 +58,7 @@ public class SpecificationController {
     }
 
     @RequestMapping("/delete")
-    public Result delete(List<Long> ids){
+    public Result delete(@RequestBody List<Long> ids){
         try {
             specificationService.delete(ids);
             return new Result(true,"删除成功");
@@ -70,7 +70,7 @@ public class SpecificationController {
 
     @RequestMapping("/search")
     public PageResult search(@RequestBody TbSpecification specification,int page,int size){
-        return specificationService.findPage(specification,page,size);
+        return specificationService.findPages(specification,page,size);
     }
 
     @RequestMapping("/selectOptionList")

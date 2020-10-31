@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
-<mapper namespace="com.hypermarket.mapper.TbItemMapper" >
-    <resultMap id="BaseResultMap" type="com.hypermarket.pojo.TbItem" >
+<mapper namespace="com.hypermarket.mapper.TbItemCatMapper" >
+    <resultMap id="BaseResultMap" type="com.hypermarket.pojo.TbItemCat" >
         <id column="id" property="id" jdbcType="BIGINT" />
         <result column="title" property="title" jdbcType="VARCHAR" />
         <result column="sell_point" property="sellPoint" jdbcType="VARCHAR" />
@@ -91,7 +91,7 @@
     id, title, sell_point, pric, stock_count, num, barcode, image, categoryId, status, create_time, update_time, item_sn, cost_price, market_price, is_default, goods_id, seller_id, cart_thumnail, category, brand, spec, seller
   </sql>
 
-    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.hypermarket.pojo.TbItemExample" >
+    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.hypermarket.pojo.TbItemCatExample" >
         select
         <if test="distinct" >
             distinct
@@ -119,14 +119,14 @@
     where id = #{id,jdbcType=BIGINT}
   </delete>
 
-    <delete id="deleteByExample" parameterType="com.hypermarket.pojo.TbItemExample" >
+    <delete id="deleteByExample" parameterType="com.hypermarket.pojo.TbItemCatExample" >
         delete from tb_item
         <if test="_parameter != null" >
             <include refid="Example_Where_Clause" />
         </if>
     </delete>
 
-    <insert id="insert" parameterType="com.hypermarket.pojo.TbItem" >
+    <insert id="insert" parameterType="com.hypermarket.pojo.TbItemCat" >
     insert into tb_item (id,  title, sell_point, pric, stock_count, num, barcode, image, categoryId, status, create_time, update_time, item_sn, cost_price, market_price, is_default, goods_id, seller_id, cart_thumnail, category, brand, spec, seller
 
       )
@@ -134,7 +134,7 @@
       )
   </insert>
 
-    <insert id="insertSelective" parameterType="com.hypermarket.pojo.TbItem" >
+    <insert id="insertSelective" parameterType="com.hypermarket.pojo.TbItemCat" >
         insert into tb_item
         <trim prefix="(" suffix=")" suffixOverrides="," >
             <if test="id != null" >
@@ -280,7 +280,7 @@
         </trim>
     </insert>
 
-    <select id="countByExample" parameterType="com.hypermarket.pojo.TbItemExample" resultType="java.lang.Integer" >
+    <select id="countByExample" parameterType="com.hypermarket.pojo.TbItemCatExample" resultType="java.lang.Integer" >
         select count(*) from tb_item
         <if test="_parameter != null" >
             <include refid="Example_Where_Clause" />
@@ -395,7 +395,7 @@
         </if>
     </update>
 
-    <update id="updateByPrimaryKeySelective" parameterType="com.hypermarket.pojo.TbItem" >
+    <update id="updateByPrimaryKeySelective" parameterType="com.hypermarket.pojo.TbItemCat" >
         update tb_item
         <set >
             <if test="id != null" >
@@ -471,7 +471,7 @@
         where id = #{id,jdbcType=BIGINT}
     </update>
 
-    <update id="updateByPrimaryKey" parameterType="com.hypermarket.pojo.TbItem" >
+    <update id="updateByPrimaryKey" parameterType="com.hypermarket.pojo.TbItemCat" >
         update tb_item
         set id = #{id,jdbcType=BIGINT},
         title = #{title,jdbcType=VARCHAR},

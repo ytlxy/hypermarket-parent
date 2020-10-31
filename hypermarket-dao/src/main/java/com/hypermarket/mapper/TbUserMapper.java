@@ -12,7 +12,7 @@ public interface TbUserMapper {
     public int deleteByPrimaryKey(Long id);
     public int insert(TbUser record);
     public int insertSelective(TbUser record);
-    public List<TbUser> selectByExample(TbUser example);
+    public List<TbUser> selectByExample(TbUserExample example);
     public TbUser selectByPrimaryKey(Long id);
     public int updateByExampleSelective(@Param("record") TbUser record, @Param("example") TbUserExample example);
     public int updateByExample(@Param("record") TbUser record,@Param("example") TbUserExample example);

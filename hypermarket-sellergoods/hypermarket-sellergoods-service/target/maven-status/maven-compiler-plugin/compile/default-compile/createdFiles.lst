@@ -1,5 +1,6 @@
 com\hypermarket\sellergoods\service\impl\TbTypeTemplateServiceImpl.class
+com\hypermarket\sellergoods\service\impl\GoodsServiceImpl.class
+com\hypermarket\sellergoods\service\impl\BrandServiceImpl.class
 com\hypermarket\sellergoods\service\impl\SpecificationServiceImpl.class
 com\hypermarket\sellergoods\service\impl\ItemCatServiceImpl.class
-com\hypermarket\sellergoods\service\impl\BrandServiceImpl.class
-com\hypermarket\sellergoods\service\impl\GoodsServiceimpl.class
+com\hypermarket\sellergoods\service\impl\TbSellerServiceImpl.class

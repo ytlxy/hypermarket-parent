@@ -7,7 +7,6 @@ import com.hypermarket.pojo.TbBrand;
 import com.hypermarket.sellergoods.service.BrandService;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;

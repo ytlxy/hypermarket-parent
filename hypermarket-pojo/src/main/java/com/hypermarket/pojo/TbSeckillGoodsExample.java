@@ -6,7 +6,7 @@ import java.util.List;
 public class TbSeckillGoodsExample { //处理动态sql xml文件中给定的字段
     protected String orderByClasuse; //定义List结果排序规则
     protected boolean disinct; //结果是否去重
-    protected List oredCriteria; //查询条件or分割成多个子查询语句
+    protected List<Criteria> oredCriteria; //查询条件or分割成多个子查询语句
 
     public TbSeckillGoodsExample() {
         oredCriteria = new ArrayList();
@@ -14,6 +14,30 @@ public class TbSeckillGoodsExample { //处理动态sql xml文件中给定的字�
 
     public void or(Criteria criteria) {
         oredCriteria.add(criteria);
+    }
+
+    public String getOrderByClasuse() {
+        return orderByClasuse;
+    }
+
+    public void setOrderByClasuse(String orderByClasuse) {
+        this.orderByClasuse = orderByClasuse;
+    }
+
+    public boolean isDisinct() {
+        return disinct;
+    }
+
+    public void setDisinct(boolean disinct) {
+        this.disinct = disinct;
+    }
+
+    public List<Criteria> getOredCriteria() {
+        return oredCriteria;
+    }
+
+    public void setOredCriteria(List<Criteria> oredCriteria) {
+        this.oredCriteria = oredCriteria;
     }
 
     public Criteria or() {

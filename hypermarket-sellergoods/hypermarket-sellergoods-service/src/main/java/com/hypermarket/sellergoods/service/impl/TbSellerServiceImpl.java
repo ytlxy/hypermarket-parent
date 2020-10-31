@@ -8,10 +8,9 @@ import com.hypermarket.pojo.TbSeller;
 import com.hypermarket.pojo.TbSellerExample;
 import com.hypermarket.sellergoods.service.TbSellerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.alibaba.dubbo.config.annotation.Service;
 
 import java.util.List;
-import java.util.Map;
 
 @Service
 public class TbSellerServiceImpl implements TbSellerService {

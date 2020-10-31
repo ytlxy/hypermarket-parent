@@ -20,7 +20,7 @@ public interface SpecificationService {
 
     public void delete(List<Long> ids);
 
-    public PageResult findPage(TbSpecification specification, int pageNum, int pageSize);
+    public PageResult findPages(TbSpecification specification, int pageNum, int pageSize);
 
     public List<Map> selectOptionList();
 }

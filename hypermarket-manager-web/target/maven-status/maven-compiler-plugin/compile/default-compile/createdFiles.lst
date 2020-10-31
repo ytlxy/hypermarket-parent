@@ -1,0 +1,6 @@
+com\hypermarket\manager\controller\TbTypeTemplateController.class
+com\hypermarket\manager\controller\GoodsController.class
+com\hypermarket\manager\controller\ItemCatController.class
+com\hypermarket\manager\controller\SpecificationController.class
+com\hypermarket\manager\controller\TbSellerController.class
+com\hypermarket\manager\controller\BrandController.class

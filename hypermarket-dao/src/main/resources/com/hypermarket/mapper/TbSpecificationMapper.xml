@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.hypermarket.mapper.TbSpecificationMapper">
-    <resultMap id="BaseResultMap" type="com.hypermarket.pojo.TbSpecification">
-        <id column="id" property="id" jdbcType="BIGINT"/>
-        <result column="spec_name" property="specName" jdbcType="VARCHAR"/>
+<mapper namespace="com.hypermarket.mapper.TbSpecificationMapper" >
+    <resultMap id="BaseResultMap" type="com.hypermarket.pojo.TbSpecification" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="spec_name" property="specName" jdbcType="VARCHAR" />
     </resultMap>
+
     <sql id="Example_Where_Clause" >
         <where >
             <foreach collection="oredCriteria" item="criteria" separator="or" >
@@ -63,9 +64,11 @@
             </foreach>
         </where>
     </sql>
-    <sql id="Base_Column_List">
-        id,spec_name
-    </sql>
+
+    <sql id="Base_Column_List" >
+    id, spec_name
+  </sql>
+
     <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.hypermarket.pojo.TbSpecificationExample" >
         select
         <if test="distinct" >
@@ -80,30 +83,35 @@
             order by ${orderByClause}
         </if>
     </select>
+
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
         select
         <include refid="Base_Column_List" />
         from tb_specification
         where id = #{id,jdbcType=BIGINT}
     </select>
+
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from tb_specification
     where id = #{id,jdbcType=BIGINT}
   </delete>
+
     <delete id="deleteByExample" parameterType="com.hypermarket.pojo.TbSpecificationExample" >
         delete from tb_specification
         <if test="_parameter != null" >
             <include refid="Example_Where_Clause" />
         </if>
     </delete>
+
     <insert id="insert" parameterType="com.hypermarket.pojo.TbSpecification" >
-        <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+        <selectKey resultType="java.lang.Long">
             SELECT LAST_INSERT_ID() AS id
         </selectKey>
-    insert into tb_specification (id,spec_name)
-    values (#{id,jdbcType=BIGINT}, #{spec_name,jdbcType=VARCHAR})
+        insert into tb_specification (id, spec_name)
+        values (#{id,jdbcType=BIGINT}, #{specName,jdbcType=VARCHAR})
   </insert>
-    <insert id="insertSelective" parameterType="com.hypermarket.pojo.TbSpecification">
+
+    <insert id="insertSelective" parameterType="com.hypermarket.pojo.TbSpecification" >
         insert into tb_specification
         <trim prefix="(" suffix=")" suffixOverrides="," >
             <if test="id != null" >
@@ -122,12 +130,14 @@
             </if>
         </trim>
     </insert>
+
     <select id="countByExample" parameterType="com.hypermarket.pojo.TbSpecificationExample" resultType="java.lang.Integer" >
         select count(*) from tb_specification
         <if test="_parameter != null" >
             <include refid="Example_Where_Clause" />
         </if>
     </select>
+
     <update id="updateByExampleSelective" parameterType="map" >
         update tb_specification
         <set >
@@ -142,6 +152,7 @@
             <include refid="Update_By_Example_Where_Clause" />
         </if>
     </update>
+
     <update id="updateByExample" parameterType="map" >
         update tb_specification
         set id = #{record.id,jdbcType=BIGINT},
@@ -150,20 +161,23 @@
             <include refid="Update_By_Example_Where_Clause" />
         </if>
     </update>
+
     <update id="updateByPrimaryKeySelective" parameterType="com.hypermarket.pojo.TbSpecification" >
         update tb_specification
         <set >
-            <if test="specName != null" >
+            <if test="spec_name != null" >
                 spec_name = #{specName,jdbcType=VARCHAR},
             </if>
         </set>
         where id = #{id,jdbcType=BIGINT}
     </update>
+
     <update id="updateByPrimaryKey" parameterType="com.hypermarket.pojo.TbSpecification" >
     update tb_specification
-    set spec_name = #{specName,jdbcType=VARCHAR}
+    set spec_name = #{specName,jdbcType=VARCHAR},
     where id = #{id,jdbcType=BIGINT}
   </update>
+
     <select id="selectOptionList" resultType="java.util.Map">
   	select id,spec_name as text from tb_specification
   </select>

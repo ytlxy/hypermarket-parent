@@ -3,7 +3,6 @@ package com.hypermarket.manager.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.hypermarket.entity.PageResult;
 import com.hypermarket.entity.Result;
-import com.hypermarket.pojo.TbItem;
 import com.hypermarket.pojo.TbItemCat;
 import com.hypermarket.sellergoods.service.ItemCatService;
 import org.springframework.web.bind.annotation.RequestBody;

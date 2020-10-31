@@ -15,6 +15,6 @@ public interface TbAddressMapper {
     public List<TbAddress> selectByExample(TbAddressExample example);
     public TbAddress selectByPrimaryKey(Long id);
     public int updateByExample(@Param("record")TbAddress record,@Param("example") TbAddressExample example);
-    public int updateByPrimaryKeySeletive(TbAddress record);
+    public int updateByPrimaryKeySelective(TbAddress record);
     public int updateByPrimaryKey(TbAddress record);
 }

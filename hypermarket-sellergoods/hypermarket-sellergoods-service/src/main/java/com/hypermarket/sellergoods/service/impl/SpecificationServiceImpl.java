@@ -1,5 +1,6 @@
 package com.hypermarket.sellergoods.service.impl;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.hypermarket.entity.PageResult;
@@ -12,7 +13,6 @@ import com.hypermarket.pojo.TbSpecificationOptionExample;
 import com.hypermarket.pojogroup.Specification;
 import com.hypermarket.sellergoods.service.SpecificationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
@@ -40,12 +40,10 @@ public class SpecificationServiceImpl implements SpecificationService {
 
     @Override
     public void add(Specification specification) {
-        TbSpecification tbSpecification = specification.getSpecification();
-        specificationMapper.insert(tbSpecification);
-        List<TbSpecificationOption> specificationOptionsList = specification.getSpecificationOptionList();
-        for (TbSpecificationOption option : specificationOptionsList) {
-            option.setSpecId(tbSpecification.getId());
-            specificationOptionMapper.insert(option);
+        specificationMapper.insert(specification.getSpecification());
+        for (TbSpecificationOption specificationOption:specification.getSpecificationOptionList()) {
+            specificationOption.setSpecId(specification.getSpecification().getId());
+            specificationOptionMapper.insert(specificationOption);
         }
     }
 
@@ -89,7 +87,7 @@ public class SpecificationServiceImpl implements SpecificationService {
     }
 
     @Override
-    public PageResult findPage(TbSpecification specification, int pageNum, int pageSize) {
+    public PageResult findPages(TbSpecification specification, int pageNum, int pageSize) {
         PageHelper.startPage(pageNum, pageSize);
         TbSpecificationExample example = new TbSpecificationExample();
         TbSpecificationExample.Criteria criteria = example.createCriteria();

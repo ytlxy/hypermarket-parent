@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Specification implements Serializable {
     private TbSpecification specification;
-    private List<TbSpecificationOption> specificationOptions;
+    private List<TbSpecificationOption> specificationOptionList;
 
     public TbSpecification getSpecification() {
         return specification;
@@ -18,11 +18,11 @@ public class Specification implements Serializable {
         this.specification = specification;
     }
 
-    public List<TbSpecificationOption> getSpecificationOptions() {
-        return specificationOptions;
+    public List<TbSpecificationOption> getSpecificationOptionList() {
+        return specificationOptionList;
     }
 
-    public void setSpecificationOptions(List<TbSpecificationOption> specificationOptions) {
-        this.specificationOptions = specificationOptions;
+    public void setSpecificationOptionList(List<TbSpecificationOption> specificationOptionList) {
+        this.specificationOptionList = specificationOptionList;
     }
 }

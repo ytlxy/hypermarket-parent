@@ -15,6 +15,7 @@ import java.util.List;
 
 @Service
 public class BrandServiceImpl implements BrandService {
+
     @Autowired
     private TbBrandMapper brandMapper;
 
@@ -25,9 +26,9 @@ public class BrandServiceImpl implements BrandService {
 
     @Override
     public PageResult findPage(int pageNum, int pageSize) {
-        PageHelper.startPage(pageNum,pageSize);
-        Page<TbBrand> page=(Page<TbBrand>) brandMapper.selectByExample(null);
-        return new PageResult(page.getTotal(),page.getResult());
+        PageHelper.startPage(pageNum, pageSize);
+        Page<TbBrand> page = (Page<TbBrand>) brandMapper.selectByExample(null);
+        return new PageResult(page.getTotal(), page.getResult());
     }
 
     @Override
@@ -47,26 +48,26 @@ public class BrandServiceImpl implements BrandService {
 
     @Override
     public void delete(List<Long> ids) {
-        for(Long id:ids){
+        for (Long id : ids) {
             brandMapper.deleteByPrimaryKey(id);
         }
     }
 
     @Override
     public PageResult getAllFindPage(TbBrand brand, int pageNum, int pageSize) {
-        PageHelper.startPage(pageNum,pageSize);
-        TbBrandExample example=new TbBrandExample();
-        TbBrandExample.Criteria criteria=example.createCriteria();
-        if (brand!=null){
-            if (brand.getName()!=null && brand.getName().length()>0){
-                criteria.andNameLike("%"+brand.getName()+"%");
+        PageHelper.startPage(pageNum, pageSize);
+        TbBrandExample example = new TbBrandExample();
+        TbBrandExample.Criteria criteria = example.createCriteria();
+        if (brand != null) {
+            if (brand.getName() != null && brand.getName().length() > 0) {
+                criteria.andNameLike("%" + brand.getName() + "%");
             }
-            if(brand.getFirstChar()!=null && brand.getFirstChar().length()>0){
-                criteria.andFirstCharLike("%"+brand.getFirstChar()+"%");
+            if (brand.getFirstChar() != null && brand.getFirstChar().length() > 0) {
+                criteria.andFirstCharLike("%" + brand.getFirstChar() + "%");
             }
         }
-        Page<TbBrand> page=(Page<TbBrand>)brandMapper.selectByExample(example);
-        return new PageResult(page.getTotal(),page.getResult());
+        Page<TbBrand> page = (Page<TbBrand>) brandMapper.selectByExample(example);
+        return new PageResult(page.getTotal(), page.getResult());
     }
 
 }

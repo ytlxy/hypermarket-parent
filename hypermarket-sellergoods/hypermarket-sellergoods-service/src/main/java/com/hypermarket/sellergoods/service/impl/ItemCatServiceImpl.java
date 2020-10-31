@@ -7,13 +7,15 @@ import com.hypermarket.mapper.TbItemCatMapper;
 import com.hypermarket.pojo.TbItemCat;
 import com.hypermarket.pojo.TbItemCatExample;
 import com.hypermarket.sellergoods.service.ItemCatService;
-import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import com.alibaba.dubbo.config.annotation.Service;
 
 import java.util.List;
 
 @Service
 public class ItemCatServiceImpl implements ItemCatService {
 
+    @Autowired
     private TbItemCatMapper tbItemCatMapper;
 
     @Override
