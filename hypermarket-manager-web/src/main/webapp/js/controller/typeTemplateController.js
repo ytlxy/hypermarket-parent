@@ -53,9 +53,9 @@ app.controller('tbTypeTemplateController',function ($scope,$controller,tbTypeTem
 	}
 
 	//批量删除
-	$scope.detele=function () {
+	$scope.detete=function () {
 		//提取选中的复选框
-		tbTypeTemplateService.detele($scope.selectIds).success(
+		tbTypeTemplateService.deletes($scope.selectIds).success(
 			function (response) {
 				if (response.success){
 					$scope.reloadList(); //刷新列表
