@@ -3,66 +3,64 @@ package com.hypermarket.pojo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TbTypeTemplateExample { //处理动态sql xml文件中给定的字段
-    protected String orderByClasuse; //定义List结果排序规则
-    protected boolean disinct; //结果是否去重
-    protected List<Criteria> oredCriteria; //查询条件or分割成多个子查询语句
+public class TbTypeTemplateExample {
+    protected String orderByClause;
+
+    protected boolean distinct;
+
+    protected List<Criteria> oredCriteria;
 
     public TbTypeTemplateExample() {
-        oredCriteria = new ArrayList();
+        oredCriteria = new ArrayList<Criteria>();
     }
 
-    public void or(Criteria criteria) {
-        oredCriteria.add(criteria);
+    public void setOrderByClause(String orderByClause) {
+        this.orderByClause = orderByClause;
     }
 
-    public String getOrderByClasuse() {
-        return orderByClasuse;
+    public String getOrderByClause() {
+        return orderByClause;
     }
 
-    public void setOrderByClasuse(String orderByClasuse) {
-        this.orderByClasuse = orderByClasuse;
+    public void setDistinct(boolean distinct) {
+        this.distinct = distinct;
     }
 
-    public boolean isDisinct() {
-        return disinct;
-    }
-
-    public void setDisinct(boolean disinct) {
-        this.disinct = disinct;
+    public boolean isDistinct() {
+        return distinct;
     }
 
     public List<Criteria> getOredCriteria() {
         return oredCriteria;
     }
 
-    public void setOredCriteria(List<Criteria> oredCriteria) {
-        this.oredCriteria = oredCriteria;
+    public void or(Criteria criteria) {
+        oredCriteria.add(criteria);
     }
 
     public Criteria or() {
-        Criteria criteria = createCriteriaInternal(); //方法负责处理该对象
+        Criteria criteria = createCriteriaInternal();
         oredCriteria.add(criteria);
         return criteria;
     }
 
     public Criteria createCriteria() {
-        Criteria criteria = createCriteriaInternal(); //该方法负责处理该对象
+        Criteria criteria = createCriteriaInternal();
         if (oredCriteria.size() == 0) {
             oredCriteria.add(criteria);
         }
         return criteria;
     }
 
-    public Criteria createCriteriaInternal() {
+    protected Criteria createCriteriaInternal() {
         Criteria criteria = new Criteria();
         return criteria;
     }
 
     public void clear() {
         oredCriteria.clear();
-        oredCriteria = null;
-        disinct = false;
+        orderByClause = null;
+        distinct = false;
     }
 
     protected abstract static class GeneratedCriteria {
@@ -77,11 +75,11 @@ public class TbTypeTemplateExample { //处理动态sql xml文件中给定的字�
             return criteria.size() > 0;
         }
 
-        public List<Criterion> getCriteria() {
+        public List<Criterion> getAllCriteria() {
             return criteria;
         }
 
-        public List<Criterion> getAllCriteria() {
+        public List<Criterion> getCriteria() {
             return criteria;
         }
 
@@ -94,14 +92,14 @@ public class TbTypeTemplateExample { //处理动态sql xml文件中给定的字�
 
         protected void addCriterion(String condition, Object value, String property) {
             if (value == null) {
-                throw new RuntimeException("value for" + property + "cannot be null");
+                throw new RuntimeException("Value for " + property + " cannot be null");
             }
             criteria.add(new Criterion(condition, value));
         }
 
         protected void addCriterion(String condition, Object value1, Object value2, String property) {
             if (value1 == null || value2 == null) {
-                throw new RuntimeException("Between values for" + property + "cannot be null");
+                throw new RuntimeException("Between values for " + property + " cannot be null");
             }
             criteria.add(new Criterion(condition, value1, value2));
         }
@@ -111,14 +109,13 @@ public class TbTypeTemplateExample { //处理动态sql xml文件中给定的字�
             return (Criteria) this;
         }
 
-
         public Criteria andIdIsNotNull() {
             addCriterion("id is not null");
             return (Criteria) this;
         }
 
         public Criteria andIdEqualTo(Long value) {
-            addCriterion("id <>", value, "id");
+            addCriterion("id =", value, "id");
             return (Criteria) this;
         }
 
@@ -157,8 +154,8 @@ public class TbTypeTemplateExample { //处理动态sql xml文件中给定的字�
             return (Criteria) this;
         }
 
-        public Criteria andIdBetween(List value1, Long value2) {
-            addCriterion("id not in", value1, value2, "id");
+        public Criteria andIdBetween(Long value1, Long value2) {
+            addCriterion("id between", value1, value2, "id");
             return (Criteria) this;
         }
 
@@ -167,14 +164,13 @@ public class TbTypeTemplateExample { //处理动态sql xml文件中给定的字�
             return (Criteria) this;
         }
 
-        //start name
         public Criteria andNameIsNull() {
-            addCriterion("name is null"); //处理的全是sql语句
+            addCriterion("name is null");
             return (Criteria) this;
         }
 
         public Criteria andNameIsNotNull() {
-            addCriterion("name is not null"); //处理的全是sql语句
+            addCriterion("name is not null");
             return (Criteria) this;
         }
 
@@ -189,16 +185,21 @@ public class TbTypeTemplateExample { //处理动态sql xml文件中给定的字�
         }
 
         public Criteria andNameGreaterThan(String value) {
-            addCriterion("name <>", value, "name");
-            return (Criteria) this;
-        }
-
-        public Criteria andNameGreaterThanEqualTo(String value) {
-            addCriterion("name >=", value, "name");
+            addCriterion("name >", value, "name");
             return (Criteria) this;
         }
 
         public Criteria andNameGreaterThanOrEqualTo(String value) {
+            addCriterion("name >=", value, "name");
+            return (Criteria) this;
+        }
+
+        public Criteria andNameLessThan(String value) {
+            addCriterion("name <", value, "name");
+            return (Criteria) this;
+        }
+
+        public Criteria andNameLessThanOrEqualTo(String value) {
             addCriterion("name <=", value, "name");
             return (Criteria) this;
         }
@@ -213,6 +214,16 @@ public class TbTypeTemplateExample { //处理动态sql xml文件中给定的字�
             return (Criteria) this;
         }
 
+        public Criteria andNameIn(List<String> values) {
+            addCriterion("name in", values, "name");
+            return (Criteria) this;
+        }
+
+        public Criteria andNameNotIn(List<String> values) {
+            addCriterion("name not in", values, "name");
+            return (Criteria) this;
+        }
+
         public Criteria andNameBetween(String value1, String value2) {
             addCriterion("name between", value1, value2, "name");
             return (Criteria) this;
@@ -222,17 +233,14 @@ public class TbTypeTemplateExample { //处理动态sql xml文件中给定的字�
             addCriterion("name not between", value1, value2, "name");
             return (Criteria) this;
         }
-        //end
 
-
-        /*spec_ids*/
         public Criteria andSpecIdsIsNull() {
-            addCriterion("spec_ids is null"); //处理的全是sql语句
+            addCriterion("spec_ids is null");
             return (Criteria) this;
         }
 
         public Criteria andSpecIdsIsNotNull() {
-            addCriterion("spec_ids is not null"); //处理的全是sql语句
+            addCriterion("spec_ids is not null");
             return (Criteria) this;
         }
 
@@ -247,16 +255,21 @@ public class TbTypeTemplateExample { //处理动态sql xml文件中给定的字�
         }
 
         public Criteria andSpecIdsGreaterThan(String value) {
-            addCriterion("spec_ids <>", value, "specIds");
-            return (Criteria) this;
-        }
-
-        public Criteria andSpecIdsGreaterThanEqualTo(String value) {
-            addCriterion("spec_ids >=", value, "specIds");
+            addCriterion("spec_ids >", value, "specIds");
             return (Criteria) this;
         }
 
         public Criteria andSpecIdsGreaterThanOrEqualTo(String value) {
+            addCriterion("spec_ids >=", value, "specIds");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecIdsLessThan(String value) {
+            addCriterion("spec_ids <", value, "specIds");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecIdsLessThanOrEqualTo(String value) {
             addCriterion("spec_ids <=", value, "specIds");
             return (Criteria) this;
         }
@@ -271,6 +284,16 @@ public class TbTypeTemplateExample { //处理动态sql xml文件中给定的字�
             return (Criteria) this;
         }
 
+        public Criteria andSpecIdsIn(List<String> values) {
+            addCriterion("spec_ids in", values, "specIds");
+            return (Criteria) this;
+        }
+
+        public Criteria andSpecIdsNotIn(List<String> values) {
+            addCriterion("spec_ids not in", values, "specIds");
+            return (Criteria) this;
+        }
+
         public Criteria andSpecIdsBetween(String value1, String value2) {
             addCriterion("spec_ids between", value1, value2, "specIds");
             return (Criteria) this;
@@ -281,70 +304,83 @@ public class TbTypeTemplateExample { //处理动态sql xml文件中给定的字�
             return (Criteria) this;
         }
 
-        /*brand_id*/
         public Criteria andBrandIdsIsNull() {
-            addCriterion("brand_id is null"); //处理的全是sql语句
+            addCriterion("brand_ids is null");
             return (Criteria) this;
         }
 
         public Criteria andBrandIdsIsNotNull() {
-            addCriterion("brand_id is not null"); //处理的全是sql语句
+            addCriterion("brand_ids is not null");
             return (Criteria) this;
         }
 
         public Criteria andBrandIdsEqualTo(String value) {
-            addCriterion("brand_id =", value, "brandIds");
+            addCriterion("brand_ids =", value, "brandIds");
             return (Criteria) this;
         }
 
         public Criteria andBrandIdsNotEqualTo(String value) {
-            addCriterion("brand_id <>", value, "brandIds");
+            addCriterion("brand_ids <>", value, "brandIds");
             return (Criteria) this;
         }
 
         public Criteria andBrandIdsGreaterThan(String value) {
-            addCriterion("brand_id <>", value, "brandIds");
-            return (Criteria) this;
-        }
-
-        public Criteria andBrandIdsGreaterThanEqualTo(String value) {
-            addCriterion("brand_id >=", value, "brandIds");
+            addCriterion("brand_ids >", value, "brandIds");
             return (Criteria) this;
         }
 
         public Criteria andBrandIdsGreaterThanOrEqualTo(String value) {
-            addCriterion("brand_id <=", value, "brandIds");
+            addCriterion("brand_ids >=", value, "brandIds");
+            return (Criteria) this;
+        }
+
+        public Criteria andBrandIdsLessThan(String value) {
+            addCriterion("brand_ids <", value, "brandIds");
+            return (Criteria) this;
+        }
+
+        public Criteria andBrandIdsLessThanOrEqualTo(String value) {
+            addCriterion("brand_ids <=", value, "brandIds");
             return (Criteria) this;
         }
 
         public Criteria andBrandIdsLike(String value) {
-            addCriterion("brand_id like", value, "brandIds");
+            addCriterion("brand_ids like", value, "brandIds");
             return (Criteria) this;
         }
 
         public Criteria andBrandIdsNotLike(String value) {
-            addCriterion("brand_id not like", value, "brandIds");
+            addCriterion("brand_ids not like", value, "brandIds");
+            return (Criteria) this;
+        }
+
+        public Criteria andBrandIdsIn(List<String> values) {
+            addCriterion("brand_ids in", values, "brandIds");
+            return (Criteria) this;
+        }
+
+        public Criteria andBrandIdsNotIn(List<String> values) {
+            addCriterion("brand_ids not in", values, "brandIds");
             return (Criteria) this;
         }
 
         public Criteria andBrandIdsBetween(String value1, String value2) {
-            addCriterion("brand_id between", value1, value2, "brandIds");
+            addCriterion("brand_ids between", value1, value2, "brandIds");
             return (Criteria) this;
         }
 
         public Criteria andBrandIdsNotBetween(String value1, String value2) {
-            addCriterion("brand_id not between", value1, value2, "brandIds");
+            addCriterion("brand_ids not between", value1, value2, "brandIds");
             return (Criteria) this;
         }
 
-        /*custom_attribute_items*/
         public Criteria andCustomAttributeItemsIsNull() {
-            addCriterion("custom_attribute_items is null"); //处理的全是sql语句
+            addCriterion("custom_attribute_items is null");
             return (Criteria) this;
         }
 
         public Criteria andCustomAttributeItemsIsNotNull() {
-            addCriterion("custom_attribute_items is not null"); //处理的全是sql语句
+            addCriterion("custom_attribute_items is not null");
             return (Criteria) this;
         }
 
@@ -359,16 +395,21 @@ public class TbTypeTemplateExample { //处理动态sql xml文件中给定的字�
         }
 
         public Criteria andCustomAttributeItemsGreaterThan(String value) {
-            addCriterion("custom_attribute_items <>", value, "customAttributeItems");
-            return (Criteria) this;
-        }
-
-        public Criteria andCustomAttributeItemsGreaterThanEqualTo(String value) {
-            addCriterion("custom_attribute_items >=", value, "customAttributeItems");
+            addCriterion("custom_attribute_items >", value, "customAttributeItems");
             return (Criteria) this;
         }
 
         public Criteria andCustomAttributeItemsGreaterThanOrEqualTo(String value) {
+            addCriterion("custom_attribute_items >=", value, "customAttributeItems");
+            return (Criteria) this;
+        }
+
+        public Criteria andCustomAttributeItemsLessThan(String value) {
+            addCriterion("custom_attribute_items <", value, "customAttributeItems");
+            return (Criteria) this;
+        }
+
+        public Criteria andCustomAttributeItemsLessThanOrEqualTo(String value) {
             addCriterion("custom_attribute_items <=", value, "customAttributeItems");
             return (Criteria) this;
         }
@@ -383,6 +424,16 @@ public class TbTypeTemplateExample { //处理动态sql xml文件中给定的字�
             return (Criteria) this;
         }
 
+        public Criteria andCustomAttributeItemsIn(List<String> values) {
+            addCriterion("custom_attribute_items in", values, "customAttributeItems");
+            return (Criteria) this;
+        }
+
+        public Criteria andCustomAttributeItemsNotIn(List<String> values) {
+            addCriterion("custom_attribute_items not in", values, "customAttributeItems");
+            return (Criteria) this;
+        }
+
         public Criteria andCustomAttributeItemsBetween(String value1, String value2) {
             addCriterion("custom_attribute_items between", value1, value2, "customAttributeItems");
             return (Criteria) this;
@@ -392,12 +443,10 @@ public class TbTypeTemplateExample { //处理动态sql xml文件中给定的字�
             addCriterion("custom_attribute_items not between", value1, value2, "customAttributeItems");
             return (Criteria) this;
         }
-        public void setCriteria(List<Criterion> criteria) {
-            this.criteria = criteria;
-        }
     }
 
-    public static class Criteria extends GeneratedCriteria { //当Criteria 继承与某个类之后 才能发挥出调用字段的能力
+    public static class Criteria extends GeneratedCriteria {
+
         protected Criteria() {
             super();
         }
@@ -405,79 +454,54 @@ public class TbTypeTemplateExample { //处理动态sql xml文件中给定的字�
 
     public static class Criterion {
         private String condition;
+
         private Object value;
+
         private Object secondValue;
+
         private boolean noValue;
+
         private boolean singleValue;
+
         private boolean betweenValue;
+
         private boolean listValue;
+
         private String typeHandler;
 
         public String getCondition() {
             return condition;
         }
 
-        public void setCondition(String condition) {
-            this.condition = condition;
-        }
-
         public Object getValue() {
             return value;
-        }
-
-        public void setValue(Object value) {
-            this.value = value;
         }
 
         public Object getSecondValue() {
             return secondValue;
         }
 
-        public void setSecondValue(Object secondValue) {
-            this.secondValue = secondValue;
-        }
-
         public boolean isNoValue() {
             return noValue;
-        }
-
-        public void setNoValue(boolean noValue) {
-            this.noValue = noValue;
         }
 
         public boolean isSingleValue() {
             return singleValue;
         }
 
-        public void setSingleValue(boolean singleValue) {
-            this.singleValue = singleValue;
-        }
-
         public boolean isBetweenValue() {
             return betweenValue;
-        }
-
-        public void setBetweenValue(boolean betweenValue) {
-            this.betweenValue = betweenValue;
         }
 
         public boolean isListValue() {
             return listValue;
         }
 
-        public void setListValue(boolean listValue) {
-            this.listValue = listValue;
-        }
-
         public String getTypeHandler() {
             return typeHandler;
         }
 
-        public void setTypeHandler(String typeHandler) {
-            this.typeHandler = typeHandler;
-        }
-
-        public Criterion(String condition) {
+        protected Criterion(String condition) {
             super();
             this.condition = condition;
             this.typeHandler = null;
@@ -489,7 +513,7 @@ public class TbTypeTemplateExample { //处理动态sql xml文件中给定的字�
             this.condition = condition;
             this.value = value;
             this.typeHandler = typeHandler;
-            if (value instanceof List<?>) { //满足为一堆数据 否则为一个数据
+            if (value instanceof List<?>) {
                 this.listValue = true;
             } else {
                 this.singleValue = true;
@@ -514,4 +538,3 @@ public class TbTypeTemplateExample { //处理动态sql xml文件中给定的字�
         }
     }
 }
-

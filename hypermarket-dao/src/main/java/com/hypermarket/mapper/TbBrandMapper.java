@@ -18,4 +18,5 @@ public interface TbBrandMapper {
     public int updateByExample(@Param("record")TbBrand record, @Param("example") TbBrandExample example);
     public int updateByPrimaryKeySelective(TbBrand record);
     public int updateByPrimaryKey(TbBrand record);
+    public List<Map> selectOptionList();
 }
