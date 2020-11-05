@@ -15,6 +15,6 @@ public interface TbAreasMapper {
     public List<TbAreas> selectByExample(TbAreasExample example);
     public TbAreas selectByPrimaryKey(Integer id);
     public int updateByExample(@Param("record") TbAreas record, @Param("example") TbAreasExample example);
-    public int updateByPrimaryKeySeletive(TbAreas record);
+    public int updateByPrimaryKeySelective(TbAreas record);
     public int updateByPrimaryKey(TbAreas record);
 }
