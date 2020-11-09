@@ -39,21 +39,25 @@ app.controller('tbTypeTemplateController', function ($scope, $controller, tbType
     //保存
     $scope.save = function () {
         var serviceObject; //服务层对象
-        if ($scope.entity, id != null) {
+        if ($scope.entity.id != null) {
             serviceObject = tbTypeTemplateService.update($scope.entity);//修改
         } else {
             serviceObject = tbTypeTemplateService.add($scope.entity); //增加
         }
         serviceObject.success(
             function (response) {
-                //重新查询
-                $scope.reloadList(); //重新加载
+                if (response.success) {
+                    //重新查询
+                    $scope.reloadList(); //重新加载
+                }else{
+                    alert(response.message);
+                }
             }
         );
     }
 
     //批量删除
-    $scope.delete = function () {
+    $scope.deles = function () {
         //提取选中的复选框
         tbTypeTemplateService.deletes($scope.selectIds).success(
             function (response) {
@@ -86,12 +90,22 @@ app.controller('tbTypeTemplateController', function ($scope, $controller, tbType
         );
     }
 
+    $scope.specList = {data: []}
+
+    $scope.findSpecList = function () {
+        SpecificationService.selectOptionList().success(
+            function (response) {
+                $scope.specList = {data: response};
+            }
+        );
+    }
+
     $scope.addTableRow = function () {
         $scope.entity.customAttributeItems.push({});
     }
 
     //删除规格选项行
-    $scope.deleteTableRow = function () {
+    $scope.deleteTableRow = function (index) {
         $scope.entity.customAttributeItems.splice(index, 1);
     }
 })

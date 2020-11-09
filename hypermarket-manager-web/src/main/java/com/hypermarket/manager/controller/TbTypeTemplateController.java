@@ -39,6 +39,7 @@ public class TbTypeTemplateController {
         }
     }
 
+    @RequestMapping("/update")
     public Result update(@RequestBody TbTypeTemplate typeTemplate) {
         try {
             typeTemplateService.update(typeTemplate);
